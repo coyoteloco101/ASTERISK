@@ -28,6 +28,7 @@ RESPONSE=$(echo -ne "${COMMAND}" | nc "${HOSTNAME}" "${PORT}")
 # Buscar el estado de la troncal SIP en la respuesta
 STATUS=$(echo -e "${RESPONSE}" | grep "Status" | awk -F':' '{print $3}' | tr -d '[:space:]' )
 
+# Verificar el estado de la troncal SIP y devolver el mensaje y código de salida correspondiente
 case $STATUS in
     UNREACHABLE)
                 MSG="UNREACHABLE"
