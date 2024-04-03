@@ -45,9 +45,13 @@ case $STATUS in
                 MSG="UNMONITORED"
                 CODE=1
         ;;
-	*)
+	OK*)
           	MSG="OK"
                 CODE=0
+        ;;
+        *)
+          	MSG="PEER NOT FOUND"
+                CODE=2
         ;;
 esac
 
